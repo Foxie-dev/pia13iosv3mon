@@ -8,13 +8,29 @@
 import SwiftUI
 
 struct ContentView: View {
+    
     var body: some View {
+        
+        @State var joke : ChuckJoke?
+        
+        var body some view
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
-        }
+            Text("CATEGORY")
+            Text(categoryname)
+            
+            if let joke {
+                Text(joke.id)
+                Text(joke.value)
+            }
+            
+            Button(action: {
+                Task {
+                    await loadjoke()
+                }
+                
+            }){
+                
+}        }
         .padding()
     }
 }
